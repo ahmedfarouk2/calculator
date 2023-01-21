@@ -21,6 +21,15 @@ body {
     margin: 10px;
     height: 100px;
     flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    font-size: 25px;
+    color: aliceblue;
+    font-family: monospace;
+    font-weight: bold;
+    direction: rtl;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
 .btns-container, .math {
