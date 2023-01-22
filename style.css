@@ -27,7 +27,6 @@ body {
     color: aliceblue;
     font-family: monospace;
     font-weight: bold;
-    direction: rtl;
     box-sizing: border-box;
     padding: 20px;
 }
