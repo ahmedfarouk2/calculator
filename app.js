@@ -1,13 +1,5 @@
 const allBtns = document.querySelectorAll('.btn');
 const clickSound = document.querySelector('audio');
-const numberOne = document.querySelector('#one');
-const numberTwo = document.querySelector('#two');
-const numberThree = document.querySelector('#three');
-const numberFour = document.querySelector('#four');
-const numberFive = document.querySelector('#five');
-const numberSix = document.querySelector('#six');
-const numberSeven = document.querySelector('#seven');
-const numberEight = document.querySelector('#eight');
 const multiplySign = document.querySelector('#multiply');
 const divideSign = document.querySelector('#divide');
 const dotSign = document.querySelector('#dot');
@@ -30,14 +22,15 @@ for (let i = 0; i < allBtns.length; i++) {
 }
 
 
+
 mathematicalContainer.addEventListener('click', e => {
-    if (e.target.classList.contains('math') && e.target.innerText !== '='){
-        resultContainer.append(e.target.innerText)
+    if (e.target.classList.contains('math') && e.target.innerText !== '=' && resultContainer.innerText.length < 12){
+        resultContainer.append(e.target.innerText);
     }
 })
 
 clearContainer.addEventListener('click', e => {
-    resultContainer.innerText = null;
+    resultContainer.innerText = '';
 })
 
 deleteContainer.addEventListener('click', (e) => {
@@ -50,3 +43,174 @@ deleteContainer.addEventListener('click', (e) => {
     resultContainer.innerText = slicedText;
 });
 
+plusSign.addEventListener('click', (e) => {
+    if (resultContainer.innerText.includes('+')){
+        let numberBeforePlus = resultContainer.innerText.split('+')[0];
+        let numberAfterPlus = resultContainer.innerText.split('+')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        } 
+    }
+    else if (resultContainer.innerText.includes('*')){
+        let numberBeforePlus = resultContainer.innerText.split('*')[0];
+        let numberAfterPlus = resultContainer.innerText.split('*')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        };    
+    }
+    else if (resultContainer.innerText.includes('-')){
+        let numberBeforePlus = resultContainer.innerText.split('-')[0];
+        let numberAfterPlus = resultContainer.innerText.split('-')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    else if (resultContainer.innerText.includes('/')){
+        let numberBeforePlus = resultContainer.innerText.split('/')[0];
+        let numberAfterPlus = resultContainer.innerText.split('/')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim()); 
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }   
+    }
+    equalsSign.addEventListener('click', (e) => {
+        let numberBeforePlus = resultContainer.innerText.split('+')[0];
+        let numberAfterPlus = resultContainer.innerText.split('+')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        } 
+    })
+})
+
+multiplySign.addEventListener('click', (e) => {
+    if (resultContainer.innerText.includes('*')){
+        let numberBeforePlus = resultContainer.innerText.split('*')[0];
+        let numberAfterPlus = resultContainer.innerText.split('*')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    else if (resultContainer.innerText.includes('-')){
+        let numberBeforePlus = resultContainer.innerText.split('-')[0];
+        let numberAfterPlus = resultContainer.innerText.split('-')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    else if (resultContainer.innerText.includes('/')){
+        let numberBeforePlus = resultContainer.innerText.split('/')[0];
+        let numberAfterPlus = resultContainer.innerText.split('/')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    else if (resultContainer.innerText.includes('+')){
+        let numberBeforePlus = resultContainer.innerText.split('+')[0];
+        let numberAfterPlus = resultContainer.innerText.split('+')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    equalsSign.addEventListener('click', (e) => {
+        let numberBeforePlus = resultContainer.innerText.split('*')[0];
+        let numberAfterPlus = resultContainer.innerText.split('*')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        } 
+    })
+})
+
+substractSign.addEventListener('click', (e) => {
+    if (resultContainer.innerText.includes('-')){
+        let numberBeforePlus = resultContainer.innerText.split('-')[0];
+        let numberAfterPlus = resultContainer.innerText.split('-')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    else if (resultContainer.innerText.includes('/')){
+        let numberBeforePlus = resultContainer.innerText.split('/')[0];
+        let numberAfterPlus = resultContainer.innerText.split('/')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    else if (resultContainer.innerText.includes('+')){
+        let numberBeforePlus = resultContainer.innerText.split('+')[0];
+        let numberAfterPlus = resultContainer.innerText.split('+')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    else if (resultContainer.innerText.includes('*')){
+        let numberBeforePlus = resultContainer.innerText.split('*')[0];
+        let numberAfterPlus = resultContainer.innerText.split('*')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    equalsSign.addEventListener('click', (e) => {
+        let numberBeforePlus = resultContainer.innerText.split('-')[0];
+        let numberAfterPlus = resultContainer.innerText.split('-')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        } 
+    })
+})
+
+divideSign.addEventListener('click', (e) => {
+    if (resultContainer.innerText.includes('/')){
+        let numberBeforePlus = resultContainer.innerText.split('/')[0];
+        let numberAfterPlus = resultContainer.innerText.split('/')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    else if (resultContainer.innerText.includes('+')){
+        let numberBeforePlus = resultContainer.innerText.split('+')[0];
+        let numberAfterPlus = resultContainer.innerText.split('+')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    else if (resultContainer.innerText.includes('*')){
+        let numberBeforePlus = resultContainer.innerText.split('*')[0];
+        let numberAfterPlus = resultContainer.innerText.split('*')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    else if (resultContainer.innerText.includes('-')){
+        let numberBeforePlus = resultContainer.innerText.split('-')[0];
+        let numberAfterPlus = resultContainer.innerText.split('-')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        }    
+    }
+    equalsSign.addEventListener('click', (e) => {
+        let numberBeforePlus = resultContainer.innerText.split('/')[0];
+        let numberAfterPlus = resultContainer.innerText.split('/')[1];
+        resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
+        if(resultContainer.innerText.length > 12){
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+        } 
+    })
+})
