@@ -64,36 +64,56 @@ deleteContainer.addEventListener('click', (e) => {
 
 plusSign.addEventListener('click', (e) => {
     if (resultContainer.innerText.includes('+')){
+        if (resultContainer.innerText === "+"){
+            resultContainer.innerText = "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('+')[0];
         let numberAfterPlus = resultContainer.innerText.split('+')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        } 
+        }
+    } 
     }
     else if (resultContainer.innerText.includes('*')){
+        if (resultContainer.innerText === "*"){
+            resultContainer.innerText = "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('*')[0];
         let numberAfterPlus = resultContainer.innerText.split('*')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        };    
+        };
+    }    
     }
     else if (resultContainer.innerText.includes('-')){
+        if (resultContainer.innerText === "-"){
+            resultContainer.innerText = "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('-')[0];
         let numberAfterPlus = resultContainer.innerText.split('-')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }
+    }    
     }
     else if (resultContainer.innerText.includes('/')){
+        if (resultContainer.innerText === "/"){
+            resultContainer.innerText = "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('/')[0];
         let numberAfterPlus = resultContainer.innerText.split('/')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim()); 
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }   
+        }
+    }   
     }
     equalsSign.addEventListener('click', (e) => {
         let numberBeforePlus = resultContainer.innerText.split('+')[0];
@@ -107,14 +127,23 @@ plusSign.addEventListener('click', (e) => {
 
 multiplySign.addEventListener('click', (e) => {
     if (resultContainer.innerText.includes('*')){
+        if (resultContainer.innerText.slice(-1) === "*"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('*')[0];
         let numberAfterPlus = resultContainer.innerText.split('*')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }
+    }    
     }
     else if (resultContainer.innerText.includes('-')){
+        if (resultContainer.innerText.slice(-1) === "-"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('-')[0];
         let numberAfterPlus = resultContainer.innerText.split('-')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
@@ -122,21 +151,32 @@ multiplySign.addEventListener('click', (e) => {
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
         }    
     }
+    }
     else if (resultContainer.innerText.includes('/')){
+        if (resultContainer.innerText.slice(-1) === "/"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('/')[0];
         let numberAfterPlus = resultContainer.innerText.split('/')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        } 
+      }   
     }
     else if (resultContainer.innerText.includes('+')){
+        if (resultContainer.innerText.slice(-1) === "+"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('+')[0];
         let numberAfterPlus = resultContainer.innerText.split('+')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }   
+      }   
     }
     equalsSign.addEventListener('click', (e) => {
         let numberBeforePlus = resultContainer.innerText.split('*')[0];
@@ -153,36 +193,56 @@ multiplySign.addEventListener('click', (e) => {
 
 substractSign.addEventListener('click', (e) => {
     if (resultContainer.innerText.includes('-')){
+        if (resultContainer.innerText.slice(-1) === "-"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('-')[0];
         let numberAfterPlus = resultContainer.innerText.split('-')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }  
+      }  
     }
     else if (resultContainer.innerText.includes('/')){
+        if (resultContainer.innerText.slice(-1) === "/"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('/')[0];
         let numberAfterPlus = resultContainer.innerText.split('/')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }
+      }
     }
     else if (resultContainer.innerText.includes('+')){
+        if (resultContainer.innerText.slice(-1) === "+"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('+')[0];
         let numberAfterPlus = resultContainer.innerText.split('+')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }   
+      } 
     }
     else if (resultContainer.innerText.includes('*')){
+        if (resultContainer.innerText.slice(-1) === "*"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('*')[0];
         let numberAfterPlus = resultContainer.innerText.split('*')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }   
+     } 
     }
     equalsSign.addEventListener('click', (e) => {
         let numberBeforePlus = resultContainer.innerText.split('-')[0];
@@ -196,36 +256,56 @@ substractSign.addEventListener('click', (e) => {
 
 divideSign.addEventListener('click', (e) => {
     if (resultContainer.innerText.includes('/')){
+        if (resultContainer.innerText.slice(-1) === "/"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('/')[0];
         let numberAfterPlus = resultContainer.innerText.split('/')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }   
+     }   
     }
     else if (resultContainer.innerText.includes('+')){
+        if (resultContainer.innerText.slice(-1) === "+"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('+')[0];
         let numberAfterPlus = resultContainer.innerText.split('+')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }  
+      }  
     }
     else if (resultContainer.innerText.includes('*')){
+        if (resultContainer.innerText.slice(-1) === "*"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('*')[0];
         let numberAfterPlus = resultContainer.innerText.split('*')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }  
+     }   
     }
     else if (resultContainer.innerText.includes('-')){
+        if (resultContainer.innerText.slice(-1) === "-"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
+        }
+        else {
         let numberBeforePlus = resultContainer.innerText.split('-')[0];
         let numberAfterPlus = resultContainer.innerText.split('-')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }   
+      } 
     }
     equalsSign.addEventListener('click', (e) => {
         let numberBeforePlus = resultContainer.innerText.split('/')[0];
