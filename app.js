@@ -64,8 +64,8 @@ deleteContainer.addEventListener('click', (e) => {
 
 plusSign.addEventListener('click', (e) => {
     if (resultContainer.innerText.includes('+')){
-        if (resultContainer.innerText === "+"){
-            resultContainer.innerText = "";
+        if (resultContainer.innerText.slice(-1) === "-"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
         }
         else {
         let numberBeforePlus = resultContainer.innerText.split('+')[0];
@@ -74,11 +74,14 @@ plusSign.addEventListener('click', (e) => {
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
         }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        }; 
     } 
     }
     else if (resultContainer.innerText.includes('*')){
-        if (resultContainer.innerText === "*"){
-            resultContainer.innerText = "";
+        if (resultContainer.innerText.slice(-1) === "-"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
         }
         else {
         let numberBeforePlus = resultContainer.innerText.split('*')[0];
@@ -86,12 +89,15 @@ plusSign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        };
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        }; 
     }    
     }
     else if (resultContainer.innerText.includes('-')){
-        if (resultContainer.innerText === "-"){
-            resultContainer.innerText = "";
+        if (resultContainer.innerText.slice(-1) === "-"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
         }
         else {
         let numberBeforePlus = resultContainer.innerText.split('-')[0];
@@ -100,11 +106,14 @@ plusSign.addEventListener('click', (e) => {
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
         }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        }; 
     }    
     }
     else if (resultContainer.innerText.includes('/')){
-        if (resultContainer.innerText === "/"){
-            resultContainer.innerText = "";
+        if (resultContainer.innerText.slice(-1) === "-"){
+            resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
         }
         else {
         let numberBeforePlus = resultContainer.innerText.split('/')[0];
@@ -113,6 +122,9 @@ plusSign.addEventListener('click', (e) => {
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
         }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        }; 
     }   
     }
     equalsSign.addEventListener('click', (e) => {
@@ -121,7 +133,10 @@ plusSign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        } 
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };  
     })
 })
 
@@ -137,6 +152,9 @@ multiplySign.addEventListener('click', (e) => {
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
         }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        }; 
     }    
     }
     else if (resultContainer.innerText.includes('-')){
@@ -149,7 +167,10 @@ multiplySign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }    
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };     
     }
     }
     else if (resultContainer.innerText.includes('/')){
@@ -162,7 +183,10 @@ multiplySign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        } 
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };  
       }   
     }
     else if (resultContainer.innerText.includes('+')){
@@ -175,7 +199,10 @@ multiplySign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }   
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };    
       }   
     }
     equalsSign.addEventListener('click', (e) => {
@@ -185,9 +212,9 @@ multiplySign.addEventListener('click', (e) => {
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
         }
-        else if (resultContainer.innerText === 'NaN'){
-            resultContainer.innerText = 'Kindly press clear and try a more rational operation :)';
-        };  
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        }; 
     })
 })
 
@@ -202,7 +229,10 @@ substractSign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }  
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };   
       }  
     }
     else if (resultContainer.innerText.includes('/')){
@@ -216,6 +246,9 @@ substractSign.addEventListener('click', (e) => {
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
         }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        }; 
       }
     }
     else if (resultContainer.innerText.includes('+')){
@@ -228,7 +261,10 @@ substractSign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }   
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };    
       } 
     }
     else if (resultContainer.innerText.includes('*')){
@@ -241,7 +277,10 @@ substractSign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }   
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };    
      } 
     }
     equalsSign.addEventListener('click', (e) => {
@@ -250,7 +289,10 @@ substractSign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        } 
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };  
     })
 })
 
@@ -265,7 +307,10 @@ divideSign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }   
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };    
      }   
     }
     else if (resultContainer.innerText.includes('+')){
@@ -278,7 +323,10 @@ divideSign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }  
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };   
       }  
     }
     else if (resultContainer.innerText.includes('*')){
@@ -291,7 +339,10 @@ divideSign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }  
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };   
      }   
     }
     else if (resultContainer.innerText.includes('-')){
@@ -304,7 +355,10 @@ divideSign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        }   
+        }
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
+        };    
       } 
     }
     equalsSign.addEventListener('click', (e) => {
@@ -314,8 +368,8 @@ divideSign.addEventListener('click', (e) => {
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
         }
-        else if (resultContainer.innerText === 'NaN'){
-            resultContainer.innerText = 'Kindly press clear and try a more rational operation :)';
+        else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
+            resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
         }; 
     })
 })
