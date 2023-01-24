@@ -12,6 +12,9 @@ const resultDiv = document.querySelector('.hidden-div');
 const mathematicalContainer = document.querySelector('.mathematical-container');
 const deleteContainer = document.querySelector('.delete-container');
 let slicedText;
+let operators = ['/', '-', '*', '+'];
+let zozo = true
+
 
 
 for (let i = 0; i < allBtns.length; i++) {
@@ -21,6 +24,22 @@ for (let i = 0; i < allBtns.length; i++) {
     })
 }
 
+
+
+dotSign.addEventListener('click', e => {
+    for (let i = 0; i < operators.length; i++){
+        if (resultContainer.innerText.includes(`${operators[i]}`)){
+            if (resultContainer.innerText.split(`${operators[i]}`)[1].slice(-1) === '.' || resultContainer.innerText.split(`${operators[i]}`)[1].includes('.')){
+                e.stopImmediatePropagation();
+            }
+        }
+    } 
+    if (resultContainer.innerText.includes('.')){
+        if (resultContainer.innerText.substring(resultContainer.innerText.indexOf('.')) === '.'){
+            e.stopImmediatePropagation();
+        }
+    }
+})
 
 
 mathematicalContainer.addEventListener('click', e => {
@@ -125,7 +144,10 @@ multiplySign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        } 
+        }
+        else if (resultContainer.innerText === 'NaN'){
+            resultContainer.innerText = 'Kindly press clear and try a more rational operation :)';
+        };  
     })
 })
 
@@ -211,6 +233,9 @@ divideSign.addEventListener('click', (e) => {
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
             resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
-        } 
+        }
+        else if (resultContainer.innerText === 'NaN'){
+            resultContainer.innerText = 'Kindly press clear and try a more rational operation :)';
+        }; 
     })
 })
