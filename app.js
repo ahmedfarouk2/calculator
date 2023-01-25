@@ -13,7 +13,6 @@ const mathematicalContainer = document.querySelector('.mathematical-container');
 const deleteContainer = document.querySelector('.delete-container');
 let slicedText;
 let operators = ['/', '-', '*', '+'];
-let zozo = true
 
 
 
@@ -64,7 +63,7 @@ deleteContainer.addEventListener('click', (e) => {
 
 plusSign.addEventListener('click', (e) => {
     if (resultContainer.innerText.includes('+')){
-        if (resultContainer.innerText.slice(-1) === "-"){
+        if (resultContainer.innerText.slice(-1) === "+"){
             resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
         }
         else {
@@ -80,7 +79,7 @@ plusSign.addEventListener('click', (e) => {
     } 
     }
     else if (resultContainer.innerText.includes('*')){
-        if (resultContainer.innerText.slice(-1) === "-"){
+        if (resultContainer.innerText.slice(-1) === "*"){
             resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
         }
         else {
@@ -112,7 +111,7 @@ plusSign.addEventListener('click', (e) => {
     }    
     }
     else if (resultContainer.innerText.includes('/')){
-        if (resultContainer.innerText.slice(-1) === "-"){
+        if (resultContainer.innerText.slice(-1) === "/"){
             resultContainer.innerText = resultContainer.innerText.slice(0,-1) + "";
         }
         else {
@@ -233,7 +232,7 @@ substractSign.addEventListener('click', (e) => {
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
         };   
-      }  
+    }  
     }
     else if (resultContainer.innerText.includes('/')){
         if (resultContainer.innerText.slice(-1) === "/"){
