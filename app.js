@@ -42,7 +42,7 @@ dotSign.addEventListener('click', e => {
 
 
 mathematicalContainer.addEventListener('click', e => {
-    if (e.target.classList.contains('math') && e.target.innerText !== '=' && resultContainer.innerText.length < 12){
+    if (e.target.classList.contains('math') && e.target.innerText !== '=' && resultContainer.innerText.length < 15){
         resultContainer.append(e.target.innerText);
     }
 })
@@ -71,7 +71,7 @@ plusSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('+')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -87,7 +87,7 @@ plusSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('*')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -103,7 +103,7 @@ plusSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('-')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -119,7 +119,7 @@ plusSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('/')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim()); 
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -131,7 +131,7 @@ plusSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('+')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -149,7 +149,7 @@ multiplySign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('*')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -165,7 +165,7 @@ multiplySign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('-')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -181,7 +181,7 @@ multiplySign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('/')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -197,7 +197,7 @@ multiplySign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('+')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -209,7 +209,7 @@ multiplySign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('*')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -227,7 +227,7 @@ substractSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('-')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -243,7 +243,7 @@ substractSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('/')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -259,7 +259,7 @@ substractSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('+')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -275,7 +275,7 @@ substractSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('*')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -287,7 +287,7 @@ substractSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('-')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -305,7 +305,7 @@ divideSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('/')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -321,7 +321,7 @@ divideSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('+')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) + Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -337,7 +337,7 @@ divideSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('*')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) * Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -353,7 +353,7 @@ divideSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('-')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) - Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
@@ -365,7 +365,7 @@ divideSign.addEventListener('click', (e) => {
         let numberAfterPlus = resultContainer.innerText.split('/')[1];
         resultContainer.innerText = Number(numberBeforePlus.trim()) / Number(numberAfterPlus.trim());
         if(resultContainer.innerText.length > 12){
-            resultContainer.innerText = Number(resultContainer.innerText).toFixed(3)
+            resultContainer.innerText = Number(resultContainer.innerText).toFixed(5)
         }
         else if (resultContainer.innerText === 'NaN' || numberAfterPlus === "" || numberBeforePlus === ""){
             resultContainer.innerText = 'Kindly press clear and make sure everything is correct!';
